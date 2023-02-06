@@ -12,18 +12,26 @@
 # You can convert types and check types by using methods like str() or type() and more.
 
 # The project is a tip calculator
+# Gather information about the bill, party size and tip
 bill = input("The total bill is: $")
 bill = float(bill)
 patrons = input("Your party size is: ")
 patrons = int(patrons)
 tip = input("What percent would you like to tip? (15 recommended) %")
 tip = int(tip)
+
+# just for the laughs
 if tip == 0:
     print("\n\nwow, don't be cheap")
     exit(0)
+
+#Put the tip in decimal form
 tip = tip/100
 
+# Determine the total bill
 tot_bill = (bill * tip) + bill
+
+# If you are flying solo, just consider the total bill, otherwise split it
 if patrons == 0:
     tot_bill=round(tot_bill, 2)
     print(f"\n\nYour total bill is: ${tot_bill}")

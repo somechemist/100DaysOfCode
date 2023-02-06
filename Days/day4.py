@@ -9,6 +9,8 @@
 from random import randint
 
 choice = input("Enter 1 for Rock, 2 for Paper or 3 for Scissors\n")
+
+# Provided by the instructor
 rock = '''
         _______
     ---'   ____)
@@ -37,23 +39,29 @@ scissors = '''
     '''
 rps_list = [rock, paper, scissors]
 
+# Make sure they entered a number!!!
 try:
     choice = int(choice)
 except:
     print("invalid option")
     exit(1)
 
+# Make sure the number is within scope and print the result
 if type(choice) == int and choice > 0 and choice <= 3:
     print("You Chose:")
     print(rps_list[choice-1])
 else:
     print("invalid option")
     exit(1)
+
+# Determine the computers choice
 comp_num = randint(1, 3)
 comp_choice = rps_list[comp_num - 1]
 print("The computer chose:")
 print(comp_choice)
 print("\n")
+
+# Determine Who won
 if (choice-1) == 0:
     if comp_num-1 == 0:
         print("Tie!")

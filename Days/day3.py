@@ -14,6 +14,7 @@
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 
+#This could benefit from a case statement and some more "fleshing out".... But this is sufficient to complete the task
 choice = input("You find yourself at a fork in the road.\nTo you left you see a stone path.\nTo your right you see a cave.\nChoose 'L' for left or 'R' for right.\n")
 if choice.upper() != "L":
     print("Oops you fell into a hole! \nGAME OVER")
