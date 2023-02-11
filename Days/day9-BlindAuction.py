@@ -22,3 +22,54 @@
 #for key in dictionary_1:
 #   print(key) # its the key
 #   print(dictionary_1[key]) # its the value
+
+# nesting is like:
+#{key: [list],
+#key2: {dict},}
+
+# You can nest dictionaries in a list, list in a dictionary and dictionary in a dictionary
+
+from os import system
+from time import sleep
+
+bids = []
+#Running = True
+
+def add_bid(name, bid):
+    system('clear')
+    bids.append({
+        name: bid
+    })
+
+def end_auction():
+    system('clear')
+    big_bid = []
+    winner = ""
+    win_bid = 0
+    for i in bids:
+        for key in i:
+            big_bid.append(i[key])
+    for i in bids:
+        for key in i:
+            if i[key] == max(big_bid):
+                winner = key
+                win_bid = i[key]
+    print(f"Congratulations to {key} for a winning bid of ${win_bid}!")
+    exit(0)
+
+while True:
+    name = input("What is your name? ")
+    end = "y"
+    try:
+        bid = int(input("What is your bid? $"))
+        add_bid(name, bid)
+        end = input("Is there anyone else looking to bid?\nEnter Yes or No.\n")
+    except:
+        print("Invalid bid")
+        sleep(0.5)
+        system('clear')
+        pass
+    if end.lower() == "yes" or end.lower() == "y":
+        pass
+    else:
+        end_auction()
