@@ -46,6 +46,7 @@ def end_auction():
     big_bid = []
     winner = ""
     win_bid = 0
+    # This could really be simplified by just using a dictionary and just storing values, checking to see if the current bid > biggest so far
     for i in bids:
         for key in i:
             big_bid.append(i[key])
@@ -54,7 +55,8 @@ def end_auction():
             if i[key] == max(big_bid):
                 winner = key
                 win_bid = i[key]
-    print(f"Congratulations to {key} for a winning bid of ${win_bid}!")
+    print(f"Congratulations to {winner} for a winning bid of ${win_bid}!")
+    # program will not work well with identical bids. This is something else I could improve.
     exit(0)
 
 while True:
