@@ -63,7 +63,6 @@ while running == True:
             else:
                 win = True
                 break
-
         if win == True:
             print("Good guess!")
             sleep(2)
