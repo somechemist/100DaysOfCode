@@ -1,0 +1,18 @@
+Always start by describing your problem. The more you know, the more you can ask ;)
+
+Next you want to reproduce the bug you actually encounter.
+
+Try to think like the computer. Remember it CAN ONLY do what you tell it to do.
+
+Look for the errors in your ide if applicable. The debugging muscle will grow with practice.
+Try debugging code questions you see on SE or discord
+
+tools like pythontutor.com can be useful to visualize issues while stepping through your code
+
+Never be afraid to walk away and think it over. When you aren't hyper focused, you can happen upon solutions to a problem that can be tested.
+
+run your code often to test as you go
+
+tackle bugs one at a time
+
+If all else fails, you can check stack overflow.
