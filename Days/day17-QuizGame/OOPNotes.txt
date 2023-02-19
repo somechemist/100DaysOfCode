@@ -1,0 +1,60 @@
+A Class is a blueprint for creating an eventual object
+
+to create a class:
+
+class User:
+    pass
+
+even empty, a class can create an object.
+
+Class names should use PascalCase
+Outside of classes, you will use snake_case for nearly everything else
+
+Even empty, you can assign attributes
+
+my_user = User()
+my_user.id = "001"
+my_user.username = "bob"
+
+--------------------------
+
+A constructor allows us to specify what should happen when an object is being constructed (Initialize)
+
+We use a special function called init
+    normally used to initialize the attributes
+    Init will be called everytime you create a new object from this class
+    self is the actual object being initialized.
+    other parameters will be the other attributes
+
+Class User:
+    def __init__(self, name):
+        self.name = name
+        self.followers = 0
+
+my_user = User("Bob") # So now self.name will be Bob, they will have a follower count of zero since that was set in the
+                        constructor
+
+Methods are the things that an object can do.
+
+class car:
+    def __init__(self)
+        self.seats = 5
+
+    def race_mode(self): (Methods always need a self parameter
+        self.seats = 2
+
+Class User:
+    def __init__(self, name):
+        self.name = name
+        self.followers = 0
+        self.following = 0
+
+    def follow(self, user):
+        user.followers += 1
+        self.following += 1
+
+user_1 = User("bob")
+user_2 = User("chuck")
+
+user_1.follow(user_2)
+
