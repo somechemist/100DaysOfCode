@@ -2,6 +2,7 @@ from turtle import Screen
 from Classes import Paddle, Ball, Score
 from time import sleep
 from random import choice
+import math
 
 running = True
 scoreboard = Score.Scoreboard()
@@ -31,7 +32,7 @@ while running:
     sleep(clock)
 
     ball.move_ball()
-
+    screen.update()
     if ball.distance(player.player_two) < distance_rule:
         ball.setheading(choice(heading_var) + int(ball.heading()))
         ball.bounce()
@@ -41,11 +42,16 @@ while running:
         ball.bounce()
 
     if ball.ycor() < -330:
-        ball.setheading(45)
-
+        if math.isclose(ball.heading(), 225, abs_tol=20):
+            ball.setheading(135)
+        else:
+            ball.setheading(45)
+    screen.update()
     if ball.ycor() > 330:
-
-        ball.setheading(135)
+        if math.isclose(ball.heading(), 45, abs_tol=20):
+            ball.setheading(-45)
+        else:
+            ball.setheading(-135)
 
     if ball.xcor() < -530:
         running = scoreboard.update_player_two_score()
@@ -58,6 +64,7 @@ while running:
         player.paddle_reset()
         sleep(1)
         ball.reset()
+    screen.update()
 
 
 screen.exitonclick()

@@ -47,19 +47,19 @@ class Paddles:
 
     def one_up(self):
         if self.player_one.ycor() < 330:
-            self.player_one.forward(20)
+            self.player_one.forward(30)
 
     def one_down(self):
         if self.player_one.ycor() > -330:
-            self.player_one.forward(-20)
+            self.player_one.forward(-30)
 
     def two_up(self):
         if self.player_two.ycor() < 330:
-            self.player_two.forward(20)
+            self.player_two.forward(30)
 
     def two_down(self):
         if self.player_two.ycor() > -330:
-            self.player_two.forward(-20)
+            self.player_two.forward(-30)
 
     def paddle_reset(self):
         self.player_one.goto(x=-530, y=0)
